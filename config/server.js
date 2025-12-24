@@ -1,3 +1,5 @@
+const cronTasks = require("./cron-task");
+
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
@@ -8,4 +10,8 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
   { logger: { config: { level: 'debug' } },
+  cron: {
+    enabled: true,
+    tasks: cronTasks,
+  },,
 });
