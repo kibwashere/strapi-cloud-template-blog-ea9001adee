@@ -9,7 +9,7 @@ module.exports = {
       console.log('---- bop');
     },
     options: {
-      rule: "0 0 1 * * 1",
+      rule: "* * * * *",
     },
   },
 };
